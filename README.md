@@ -1,5 +1,7 @@
-### dotfiles
-Various confguration I used on my PC
+### Storage of various configuration and tools usefull for Linux
+##### Tools
+* update_garmin: update my garmin GPS with freshly generated pocket query from geocaching.com
+
 ##### zsh
 zsh configuration and custimization.
 Customisation of prompt to have information about git repositories.

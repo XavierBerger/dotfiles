@@ -1,0 +1,13 @@
+#!/bin/bash
+DATE=$(date +%Y%m%d)
+echo sudo gpsbabel -t -i garmin -f usb:// -o gpx -F Traces/${DATE}_trace.gpx
+sudo gpsbabel -t -i garmin -f usb:// -o gpx -F ${DATE}_trace.gpx
+echo Cleanup the GPS and hit enter
+read a
+unzip *.zip
+for iloop in $(ls *.gpx | grep -v $DATE); do
+	echo gpsbabel -w -i gpx -f $iloop -o garmin -F usb://
+	sudo gpsbabel -w -i gpx -f $iloop -o garmin -F usb://
+done
+pkdir -p Archives/
+mv *.gpx *.zip Archives/
