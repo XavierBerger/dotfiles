@@ -70,7 +70,7 @@ zstyle ':vcs_info:*:prompt:*' check-for-changes true
 zstyle ':vcs_info:*:prompt:*' get-revision true
 zstyle ':vcs_info:*:prompt:*' stagedstr "*"
 zstyle ':vcs_info:*:prompt:*' unstagedstr "*"
-zstyle ':vcs_info:*:prompt:*' nvcsformats "%{$fg[blue]%}%~"
+zstyle ':vcs_info:*:prompt:*' nvcsformats "%{$fg[blue]%}%d"
 zstyle ':vcs_info:git:prompt:*' formats "%{$fg[blue]%}%R%{$fg[cyan]%}/%S %{$fg[cyan]%}[%{$fg[red]%}%b%{$fg[cyan]%}:%{$fg[white]%}%5.5i%{$fg[cyan]%}]%{$fg[blue]%}"
 
 precmd() {
