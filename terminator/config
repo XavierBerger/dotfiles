@@ -1,0 +1,26 @@
+[global_config]
+  enabled_plugins = ,
+  window_state = maximise
+  focus = mouse
+  borderless = True
+[keybindings]
+  hide_window = F1
+[profiles]
+  [[default]]
+    background_image = None
+    scrollback_infinite = True
+    foreground_color = "#ffffff"
+  [[Reverse]]
+    background_image = None
+    background_color = "#ffffff"
+    foreground_color = "#000000"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
