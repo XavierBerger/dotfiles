@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Source: https://github.com/yonchu/zsh-vcs-prompt
+
 
 from __future__ import print_function
 

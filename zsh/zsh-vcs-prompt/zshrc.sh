@@ -1,6 +1,7 @@
 ###############################################################################
 #
 #  VCS INFO
+#  https://github.com/yonchu/zsh-vcs-prompt
 #
 #  How to install:
 #
