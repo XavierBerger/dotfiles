@@ -56,12 +56,6 @@ zstyle :compinstall filename "${USER}/.zshrc"
 autoload -Uz compinit
 compinit
 
-autoload -U promptinit
-promptinit
-
-autoload colors
-colors
-
 alias ls='ls -F --color=auto' 
 alias ll='ls -lh'
 alias la='ls -lha'
@@ -77,7 +71,7 @@ zstyle ':vcs_info:*:prompt:*' get-revision true
 zstyle ':vcs_info:*:prompt:*' stagedstr "*"
 zstyle ':vcs_info:*:prompt:*' unstagedstr "*"
 zstyle ':vcs_info:*:prompt:*' nvcsformats "%{$fg[blue]%}%~"
-zstyle ':vcs_info:git:prompt:*' formats "%{$fg[white]%}%R%{$fg[blue]%}/%S %{$fg[cyan]%}[%{$fg[red]%}%b%{$fg[cyan]%}:%{$fg[white]%}%5.5i%{$fg[cyan]%}]%{$fg[blue]%}"
+zstyle ':vcs_info:git:prompt:*' formats "%{$fg[blue]%}%R%{$fg[cyan]%}/%S %{$fg[cyan]%}[%{$fg[red]%}%b%{$fg[cyan]%}:%{$fg[white]%}%5.5i%{$fg[cyan]%}]%{$fg[blue]%}"
 
 precmd() {
     vcs_info 'prompt'
@@ -85,8 +79,8 @@ precmd() {
 
 function lprompt {
     ZSH_VCS_PROMPT_ENABLE_CACHING='true'
-    PROMPT="╔═|%B"'${vcs_info_msg_0_}$(vcs_super_info)'"%b
-╚═%{$fg[cyan]%}%(!.%{$fg[red]%}%B%n%b.%{$fg[cyan]%}%n)%{$fg[green]%}@%{$fg[cyan]%}%(!.%{$fg[red]%}%B%m%b.%{$fg[cyan]%}%m)%{$fg[green]%}%#%b "
+    PROMPT="%{%(#~$fg[red]~$fg[white])%}╔═|%{$fg[default]%}%B"'${vcs_info_msg_0_}$(vcs_super_info)'"%b
+%{%(#~$fg[red]~$fg[white])%}╚═%{$fg[default]%}%{$fg[cyan]%}%n%{$fg[green]%}@%{$fg[cyan]%}%m%{$fg[green]%}%#%b "
 }
 
 function rprompt {
