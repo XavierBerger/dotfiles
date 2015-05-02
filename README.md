@@ -1,4 +1,5 @@
 ### dotfiles
 Various confguration I used on my PC
-##### zsh configuration
+##### zsh
+zsh configuration and custimization.
 Customisation of prompt to have information about git repositories.
