@@ -1,6 +1,7 @@
 ### Storage of various configuration and tools usefull for Linux
 ##### Tools
 * update_garmin: update my garmin GPS with freshly generated pocket query from geocaching.com
+* toggle-touchpad.sh: activate/desactivate touchpad of laptop
 
 ##### zsh
 zsh configuration and custimization.
