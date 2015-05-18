@@ -10,6 +10,9 @@ export HISTSIZE=10000
 # number of lines saved in the history after logout
 export SAVEHIST=10000
 
+# define charset for less
+export LESSCHARSET=utf-8
+
 # activate autocd 
 setopt autocd 
 
@@ -52,7 +55,6 @@ unsetopt appendhistory beep extendedglob nomatch notify
 
 zstyle :compinstall filename "${USER}/.zshrc"
 
-
 autoload -Uz compinit
 compinit
 
@@ -60,6 +62,7 @@ alias ls='ls -F --color=auto'
 alias ll='ls -lh'
 alias la='ls -lha'
 alias grep='grep --color=auto' 
+alias pyhttp='python -m SimpleHTTPServer' 
 
 setopt PROMPT_SUBST
 

@@ -1,0 +1,21 @@
+syntax on
+filetype  indent plugin on              " Activate auto indentation
+
+set  tabstop =2                         " Tab = 2 spaces
+set  shiftwidth =2             
+set  softtabstop =2             
+set  expandtab                          " Convert tab to space
+
+set  hlsearch                           " highlight searches
+set  ignorecase                         " Ignore case when search word
+set  smartcase                          " Do not ignore case when a capital letter is enter
+set  showmatch
+set  incsearch
+
+set autoindent                          " keep the same indent for new lines
+set smartindent                         " (un)indent in regards to { and }
+
+set nowrap
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
