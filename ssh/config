@@ -17,6 +17,14 @@ Host *
     ServerAliveInterval 300
     TCPKeepAlive yes
 
+# Hosts configuration
+host bitbucket.org
+    IdentityFile ~/.ssh/id_rsa
+
+host pi
+    Hostname 192.168.0.123
+    User pi
+    IdentityFile ~/.ssh/id_rsa
 
 # Host-specific settings
 # #############################################################################
