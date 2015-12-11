@@ -74,7 +74,7 @@ zstyle ':vcs_info:*:prompt:*' get-revision true
 zstyle ':vcs_info:*:prompt:*' stagedstr "*"
 zstyle ':vcs_info:*:prompt:*' unstagedstr "*"
 zstyle ':vcs_info:*:prompt:*' nvcsformats "%{$fg[blue]%}%d"
-zstyle ':vcs_info:git:prompt:*' formats "%{$fg[blue]%}%R%{$fg[cyan]%}/%S %{$fg[cyan]%}[%{$fg[red]%}%b%{$fg[cyan]%}:%{$fg[white]%}%5.5i%{$fg[cyan]%}]%{$fg[blue]%}"
+zstyle ':vcs_info:git:prompt:*' formats "%{$fg[blue]%}%R%{$fg[cyan]%}/%S %{$fg[cyan]%}[%{$fg[red]%}%b%{$fg[cyan]%}:%{$fg[white]%}%5.5i%{$fg[cyan]%}]%{$fg[blue]%}%{$reset_color%}"
 
 precmd() {
     vcs_info 'prompt'
@@ -82,13 +82,13 @@ precmd() {
 
 function lprompt {
     ZSH_VCS_PROMPT_ENABLE_CACHING='true'
-    PROMPT="%{%(#~$fg[red]~$fg[white])%}╔═|%{$fg[default]%}%B"'${vcs_info_msg_0_}$(vcs_super_info)'"%b
-%{%(#~$fg[red]~$fg[white])%}╚═%{$fg[default]%}%{$fg[cyan]%}%n%{$fg[green]%}@%{$fg[cyan]%}%m%{$fg[green]%}%#%b "
+    PROMPT="%{%(#~$fg[red]~$fg[white])%}╔═|%{$fg[default]%}%{%B%}"'${vcs_info_msg_0_}$(vcs_super_info)'"%{%b%}
+%{%(#~$fg[red]~$fg[white])%}╚═%{$fg[default]%}%{$fg[cyan]%}%n%{$fg[green]%}@%{$fg[cyan]%}%m%{$fg[green]%}%#%{$reset_color%} "
 }
 
 function rprompt {
-    local error="%(?..%B%{$fg[red]%}Err. %{$fg[red]%}%? %{$fg[grey]%}| %b)"
-    local time="%B%{$fg[green]%}[%{$fg[cyan]%}%T%{$fg[green]%}]%b"
+    local error="%(?..%{%B%}%{$fg[red]%}Err. %{$fg[red]%}%? %{$fg[grey]%}| %{%b%})"
+    local time="%{%B%}%{$fg[green]%}[%{$fg[cyan]%}%T%{$fg[green]%}]%{%b%}"
     RPROMPT="${error}${time}"
 }
 
