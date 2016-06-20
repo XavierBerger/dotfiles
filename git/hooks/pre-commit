@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#
+# To use this code as a hook, simply copy/paste the script in
+# .git/hooks/pre-commit
+#
+
+git fetch -v --dry-run 2>&1 |
+    grep -qE "\[up\s+to\s+date\]\s+$(
+        git branch 2>/dev/null |
+           sed -n '/^\*/s/^\* //p' |
+                sed -r 's:(\+|\*|\$):\\\1:g'
+    )\s+" || {
+        echo >&2 "Current branch need a 'git pull' before commit"
+        exit 1
+}
