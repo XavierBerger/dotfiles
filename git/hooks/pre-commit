@@ -1,27 +1,26 @@
 #!/bin/bash
-
 #
 # To use this code as a hook, simply copy/paste the script in
 # .git/hooks/pre-commit
 #
 
 # Check if previously added file have been modified
-if [ "x$(git diff --name-only)" != "x" ];  then
+git status -s | grep MM >/dev/null 2>&1 && {
     echo >&2 "Some added files has changed. Files need 'git add' before commit."
     exit 1
-fi
+}
 
 # Check source code style
-for iloop in $(git diff --cached --name-only); do
+for iloop in $(git diff --cached --name-only *.c *.cpp *.h); do
     astyle -A10 -J -S -s4 -xn -q $iloop
-    if [ "x$(git diff --name-only)" != "x" ];  then
-        echo >&2 "Style has been updated. Files need 'git add' before commit."
-        exit 1
-    fi
 done
+git status -s | grep MM >/dev/null 2>&1 && {
+    echo >&2 "Style has been updated. Files need 'git add' before commit."
+    exit 1
+}
 
 # Check if commit can be performed
-git fetch -v --dry-run 2>&1 |
+LANG=EN_us git fetch -v --dry-run 2>&1 |
     grep -qE "\[up\s+to\s+date\]\s+$(
         git branch 2>/dev/null |
            sed -n '/^\*/s/^\* //p' |
