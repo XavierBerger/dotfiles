@@ -17,4 +17,5 @@ Customisation of prompt to have information about git repositories.
 * https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git
 
 #### git
-* git hook to ensure clean code source style (using astyle) and avoid commit to a branch not up to date.
+* **pre-commit** hook to ensure clean code source style (using astyle) and avoid commit to a branch not up to date.
+* **gitconfig** configuration with usefull shortcuts 
