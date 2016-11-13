@@ -11,9 +11,7 @@
   l = log --format=format:'%C(auto)%h%d%C(reset) %s %C(bold blue)(%an, %ar)%C(reset)'
   ll = log --stat --decorate --abbrev-commit --date=relative
   lll = log -p --stat --decorate --abbrev-commit --date=relative
-  
-[core]
-    excludesfile = ~/.gitignore
-    
+  tr = log --graph --format=format:'%C(auto)%h%d%C(reset) %s %C(bold blue)(%an, %ar)%C(reset)'
+
 [color]
     ui = auto
