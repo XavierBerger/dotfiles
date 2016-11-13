@@ -15,3 +15,6 @@ Customisation of prompt to have information about git repositories.
 ###### Configuration for bitbucket and github
 * https://help.github.com/articles/generating-ssh-keys/
 * https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git
+
+#### git
+* git hook to ensure clean code source style (using astyle) and avoid commit to a branch not up to date.
